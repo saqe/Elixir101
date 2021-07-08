@@ -19,17 +19,13 @@ defmodule Prime do
     odd=next_odd(number)
     if prime?(number,odd), do: odd, else: next_prime(next_odd(odd))
   end
-
-  def empty(str) when str === "" do: "It's empty string"
 end
 Prime.odd_numbers_in_range(
   Enum.to_list(1..500)
 ) |> Enum.map( &( if Prime.prime?(&1), do: IO.inspect(&1) ))
 
-
-Prime.empty("")
-# IO.gets("Enter a number : ")
-#   |> String.trim
-#   |> String.to_integer
-#   |> Prime.next_prime
-#   |> IO.inspect
+IO.gets("Enter a number : ")
+  |> String.trim
+  |> String.to_integer
+  |> Prime.next_prime
+  |> IO.inspect

@@ -41,6 +41,4 @@ a_string
 
 a_string
   |> String.to_charlist
-  |> Enum.map(&(
-      &1 |> IO.inspect
-    ))
+  |> Enum.map(&IO.inspect\1)
